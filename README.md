@@ -17,3 +17,6 @@ Contoh: `dts4a-01-final`
 ## Branching, commit
 
 Branch dapat sesuai dengan kebutuhan dan kesepakatan bersama dalam pair, namun hasil akhirnya harus di merge ke branch `main` dan di push ke Github. Pastikan hasil akhir kode sudah ter-push!
+
+## Video
+https://gfycat.com/ablesophisticatedhare
