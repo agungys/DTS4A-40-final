@@ -10,6 +10,7 @@ const DetailMovies = () => {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
+        
         const fetchDataMovies = async () => {
         try {
             const responseDariTMDB = await tmdb.get(

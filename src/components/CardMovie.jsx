@@ -2,10 +2,7 @@ import React from "react";
 import {
   Box,
   Card,
-  CardMedia,
-  CardContent,
-  Rating,
-  Typography,
+  CardMedia
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
@@ -15,7 +12,7 @@ const CardMovie = (props) => {
 
   return (
     // di sini kita menggunakan Component Card dari MUI
-    <Card className="boxy" onClick={()=>navigate("/detail/"+`${props.movie.id}`)}>
+    <Card className="boxy" onClick={()=>navigate(`/detail/${props.movie.id}`)}>
       <Box
         className="boxy"
         sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
