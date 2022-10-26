@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect } from "react";
-
 import styles from "./LoginOrRegisterForm.module.css";
 
 import { Grid, Box, Button, TextField, Typography } from "@mui/material";
@@ -16,6 +15,39 @@ import {
 
 import { useAuthState } from "react-firebase-hooks/auth";
 
+import { outlinedInputClasses } from "@mui/material/OutlinedInput";
+import { inputLabelClasses } from "@mui/material/InputLabel";
+import { styled } from "@mui/material/styles";
+
+const StyledTextField = styled(TextField)({
+  [`& .${outlinedInputClasses.root} .${outlinedInputClasses.notchedOutline}`]: {
+    borderColor: "White"
+  },
+  [`&:hover .${outlinedInputClasses.root} .${outlinedInputClasses.notchedOutline}`]: {
+    borderColor: "red"
+  },
+  [`& .${outlinedInputClasses.root}.${outlinedInputClasses.focused} .${outlinedInputClasses.notchedOutline}`]: {
+    borderColor: "purple"
+  },
+  [`& .${outlinedInputClasses.input}`]: {
+    color: "White"
+  },
+  [`&:hover .${outlinedInputClasses.input}`]: {
+    color: "red"
+  },
+  [`& .${outlinedInputClasses.root}.${outlinedInputClasses.focused} .${outlinedInputClasses.input}`]: {
+    color: "purple"
+  },
+  [`& .${inputLabelClasses.outlined}`]: {
+    color: "White"
+  },
+  [`&:hover .${inputLabelClasses.outlined}`]: {
+    color: "red"
+  },
+  [`& .${inputLabelClasses.outlined}.${inputLabelClasses.focused}`]: {
+    color: "purple"
+  }
+});
 const LoginOrRegisterForm = ({ loginOrRegister }) => {
   const navigate = useNavigate();
 
@@ -85,7 +117,7 @@ const LoginOrRegisterForm = ({ loginOrRegister }) => {
           {loginOrRegister === "login" ? "Login Page" : "Register Page"}
         </Typography>
 
-        <TextField
+        <StyledTextField
           label="Email"
           type="email"
           variant="outlined"
@@ -94,7 +126,7 @@ const LoginOrRegisterForm = ({ loginOrRegister }) => {
           onChange={textFieldEmailOnChangeHandler}
         />
 
-        <TextField
+        <StyledTextField
           label="password"
           type="Password"
           variant="outlined"
@@ -104,7 +136,7 @@ const LoginOrRegisterForm = ({ loginOrRegister }) => {
         />
 
         <Button
-          variant="outlined"
+          variant="contained"
           size="small"
           onClick={buttonLoginOrRegisterOnClickHandler}
         >
@@ -113,11 +145,11 @@ const LoginOrRegisterForm = ({ loginOrRegister }) => {
 
         {loginOrRegister === "login" ? (
           <Link to="/register">
-            <Typography variant="body1">or do you want Register ?</Typography>
+            <Typography variant="body1" sx={{color:"#ffffff"}}>or do you want Register ?</Typography>
           </Link>
         ) : (
           <Link to="/login">
-            <Typography variant="body1">or do you want Login ?</Typography>
+            <Typography variant="body1" sx={{color:"#ffffff"}}>or do you want Login ?</Typography>
           </Link>
         )}
       </Box>

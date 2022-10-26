@@ -6,8 +6,9 @@ import CardDetailMovie from "../components/CardDetailMovie";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
-const DetailMovies = () => {
+const Pencarian = () => {
     let params = useParams();
+
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
@@ -15,9 +16,9 @@ const DetailMovies = () => {
         const fetchDataMovies = async () => {
         try {
             const responseDariTMDB = await tmdb.get(
-            "/movie/"+params.id
+            "/search/movie?query="+params.textcari
             );
-            setMovies(responseDariTMDB.data);
+            setMovies(responseDariTMDB.data.results);
         } catch (err) {
             console.log(err);
         }
@@ -26,16 +27,18 @@ const DetailMovies = () => {
         fetchDataMovies();
     }, [params]);
 
-    return (
+    return(
         <div className="App">
             <NavBar />
             <Box className="boxy">
-            <Typography variant="h5">Detail Movies</Typography>
-                <CardDetailMovie movie={movies} key={movies.id}/>
+            <Typography variant="h5">Pencarian : {params.textcari}</Typography>
+            {movies.map((movie) => {
+                return <CardDetailMovie movie={movie} key={movie.id}/>;
+            })}
             </Box>
             <Footer />
         </div>
-    );
+    )
 }
 
-export default DetailMovies;
+export default Pencarian;

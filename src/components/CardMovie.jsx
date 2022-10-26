@@ -25,6 +25,7 @@ const CardMovie = (props) => {
         ></CardMedia>
       </Box>
     </Card>
+    
   );
 };
 

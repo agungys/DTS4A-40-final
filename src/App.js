@@ -1,13 +1,15 @@
 import React from "react";
 
 import NavBar from "./components/NavBar";
-import PopularMovies from "./containers/PopularMovies";
+import HomePage from "./containers/HomePage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <PopularMovies />
+      <HomePage />
+      <Footer />
     </div>
   );
 }
