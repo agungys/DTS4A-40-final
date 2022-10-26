@@ -20,3 +20,5 @@ Branch dapat sesuai dengan kebutuhan dan kesepakatan bersama dalam pair, namun h
 
 ## Video GIF
 https://gfycat.com/ablesophisticatedhare
+
+## Project Ini Dibuat SOLO
