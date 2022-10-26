@@ -23,7 +23,7 @@ const DetailMovies = () => {
         };
 
         fetchDataMovies();
-    }, []);
+    }, [params]);
 
     return (
         <div className="App">
